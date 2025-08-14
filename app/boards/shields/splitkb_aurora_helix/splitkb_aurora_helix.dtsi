@@ -5,12 +5,16 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <layouts/helix/helix_layout.dtsi>
+
+&helix_5row_layout { transform = <&default_transform>; };
 
 / {
 
     chosen {
         zephyr,display = &oled;
-        zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &helix_5row_layout;
+        zmk,kscan = &kscan;
     };
 
     default_transform: keymap_transform_0 {
